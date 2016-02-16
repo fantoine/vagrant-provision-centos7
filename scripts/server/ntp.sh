@@ -7,7 +7,7 @@ if [ ! -f /etc/ntp.conf ]; then
     yum install -y ntp >/dev/null 2>&1
     ntpdate pool.ntp.org >/dev/null 2>&1
     chkconfig ntpd on >/dev/null 2>&1
-    service ntpd start >/dev/null 2>&1
+    systemclt start ntpd >/dev/null 2>&1
 
     # Set timezone
     rm -f /etc/localtime
@@ -25,9 +25,9 @@ if [ ! -f /usr/bin/update-time ]; then
 
     # Create a script to update time. 
     cat >/usr/bin/update-time <<EOL
-    service ntpd stop
+    systemclt stop ntpd
     ntpdate pool.ntp.org
-    service ntpd start
+    systemclt start ntpd
 EOL
 
     # Now we can just run "update-time" to restart and sync time servers:

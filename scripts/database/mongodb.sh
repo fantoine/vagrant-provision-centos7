@@ -18,7 +18,7 @@ CONTENT
     chkconfig mongod on >/dev/null 2>&1
 
     # Restart MongoDB
-    service mongod restart >/dev/null 2>&1
+    systemclt restart mongod >/dev/null 2>&1
 fi
 
 if [ "$phpenabled" == true ] && [ ! "$(php -m | grep mongo)" ]; then
@@ -48,7 +48,7 @@ if [ "$phpenabled" == true ] && [ ! "$(php -m | grep mongo)" ]; then
     echo 'extension=mongo.so' >> /etc/php.d/mongo.ini
 
     # Restart Apache
-    service httpd restart >/dev/null 2>&1
+    systemclt restart httpd >/dev/null 2>&1
 fi
 
 # Load fixtures

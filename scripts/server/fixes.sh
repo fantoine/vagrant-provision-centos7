@@ -5,11 +5,11 @@
 if [ ! "$(grep single-request-reopen /etc/resolv.conf)" ]; then
     echo "Fixing slow curl requests"
     echo 'options single-request-reopen' >> /etc/resolv.conf
-    service network restart >/dev/null 2>&1
+    systemclt restart network >/dev/null 2>&1
 fi
 
 # Fix GRUB timeout
-if ! grep -q "vagrant-grub" /boot/grub/grub.conf; then
+if ! grep -q "vagrant-grub" /boot/grub2/grub.cfg; then
     echo "Fixing grub start timeout"
-    sed -i 's/timeout=.*/timeout=0 # vagrant-grub/g' /boot/grub/grub.conf
+    sed -i 's/timeout=.*/timeout=0 # vagrant-grub/g' /boot/grub2/grub.cfg
 fi

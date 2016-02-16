@@ -18,5 +18,5 @@ if ! yum list installed blackfire-agent >/dev/null 2>&1; then
         /etc/blackfire/agent
     
     # Restart service
-    service blackfire-agent restart >/dev/null 2>&1
+    systemclt restart blackfire-agent >/dev/null 2>&1
 fi

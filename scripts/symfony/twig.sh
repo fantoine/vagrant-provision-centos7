@@ -24,5 +24,5 @@ if [ ! -f /etc/php.d/twig.ini ]; then
     echo 'extension=twig.so' >> /etc/php.d/twig.ini
 
     # Restart Apache
-    service httpd restart >/dev/null 2>&1
+    systemclt restart httpd >/dev/null 2>&1
 fi

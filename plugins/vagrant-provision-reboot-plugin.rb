@@ -34,11 +34,11 @@ class RebootPlugin < Vagrant.plugin('2')
                 
                 # Update vbguest
                 @machine.ui.info("Updating vb-guests")
-                @machine.communicate.sudo('/etc/init.d/vboxadd setup') do |type, data|
-                    if type == :stderr
-                        @machine.ui.error(data);
-                    end
-                end
+                #@machine.communicate.sudo('/etc/init.d/vboxadd setup') do |type, data|
+                #    if type == :stderr
+                #        @machine.ui.error(data);
+                #    end
+                #end
 
                 # Do reload
                 @machine.ui.info("Reloading the VM")

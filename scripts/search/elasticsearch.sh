@@ -16,5 +16,5 @@ CONTENT
     chkconfig elasticsearch on >/dev/null 2>&1
     
     # Start service
-    service elasticsearch start >/dev/null 2>&1
+    systemclt start elasticsearch >/dev/null 2>&1
 fi

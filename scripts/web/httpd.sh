@@ -76,5 +76,5 @@ if [ ! -f $conf ] || [[ "$ssl" == "true" && (! -f $sslconf) ]]; then
     fi
 
     # Restarting httpd service
-    service httpd restart >/dev/null 2>&1
+    systemclt restart httpd >/dev/null 2>&1
 fi

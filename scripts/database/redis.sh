@@ -6,5 +6,5 @@ if ! yum list installed redis >/dev/null 2>&1; then
     chkconfig redis on
 
     # Restart Redis
-    service redis restart >/dev/null 2>&1
+    systemclt restart redis >/dev/null 2>&1
 fi

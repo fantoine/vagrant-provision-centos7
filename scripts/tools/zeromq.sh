@@ -5,7 +5,7 @@ phpenabled="$1"
 if ! yum list installed zeromq >/dev/null 2>&1; then
     echo 'Installing ZeroMQ'
 
-        cat > /etc/yum.repos.d/fengshuo.zeromq.repo <<- CONTENT
+    cat > /etc/yum.repos.d/fengshuo.zeromq.repo <<- CONTENT
 [home_fengshuo_zeromq]
 name=The latest stable of zeromq builds (CentOS_CentOS-6)
 type=rpm-md
@@ -29,5 +29,5 @@ if [ "$phpenabled" == true ] && [ ! "$(php -m | grep zmq)" ]; then
     echo 'extension=zmq.so' >> /etc/php.d/zmq.ini
 
     # Restart Apache
-    service httpd restart >/dev/null 2>&1
+    systemclt restart httpd >/dev/null 2>&1
 fi

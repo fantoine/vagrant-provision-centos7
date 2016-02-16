@@ -1,7 +1,7 @@
-# Vagrant provisioner for CentOS 6.6
+# Vagrant provisioner for CentOS 7
 
 This repository provides a set of shell scripts which allows to
-easily and quickly setup a CentOS 6.6 VM with Vagrant.
+easily and quickly setup a CentOS 7 VM with Vagrant.
 
 ## Installing the library
 

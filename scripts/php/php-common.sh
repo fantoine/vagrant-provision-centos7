@@ -25,5 +25,5 @@ if [ ! -f /etc/php.ini ]; then
     pecl channel-update pecl.php.net >/dev/null 2>&1
 
     # Restarting Apache
-    service httpd restart >/dev/null 2>&1
+    systemclt restart httpd >/dev/null 2>&1
 fi

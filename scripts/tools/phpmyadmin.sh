@@ -87,5 +87,5 @@ if [ ! -f /etc/httpd/conf.d/phpmyadmin.conf ]; then
     cp /vagrant/vagrant/data/tools/phpmyadmin.conf /etc/httpd/conf.d/phpmyadmin.conf
 
     # Restart Apache
-    service httpd restart >/dev/null 2>&1
+    systemclt restart httpd >/dev/null 2>&1
 fi

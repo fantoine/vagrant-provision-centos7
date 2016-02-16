@@ -4,7 +4,7 @@ timezone="$1"
 fixtures="$2"
 
 # Make sure to stop server
-service mysql stop >/dev/null 2>&1
+systemclt stop mysql >/dev/null 2>&1
 
 # Copy configuration file
 cp /vagrant/vagrant/data/database/my.cnf /etc/my.cnf
@@ -17,7 +17,7 @@ TZ=oldTZ
 sed -i -e "s@:timezone:@$mysqlTimezone@" /etc/my.cnf
 
 # Restart server
-service mysql start >/dev/null 2>&1
+systemclt start mysql >/dev/null 2>&1
 chkconfig mysql on >/dev/null 2>&1
 
 # Delete test database

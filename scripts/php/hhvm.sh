@@ -6,8 +6,14 @@ if ! yum list installed hhvm >/dev/null 2>&1; then
     echo 'Installing hhvm'
 
     # Install HHVM
-    rpm -i http://dheche.fedorapeople.org/hhvm/el6/RPMS/x86_64/hhvm-release-6-1.noarch.rpm
-    yum install -y hhvm --enablerepo=epel,remi
+    cat > /etc/yum.repos.d/debianized.repo <<- CONTENT
+[debianized]
+name=debianized packages for Enterprise Linux 7 - \$basearch
+baseurl=http://repo.debianized.net/centos/7/RPMS/\$basearch
+enabled=1
+gpgcheck=0
+CONTENT
+    yum install -y hhvm-3.5.0
 fi
 
 if [ "$composer" == true ]; then
