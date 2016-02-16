@@ -1,0 +1,73 @@
+#!/bin/bash
+
+declare -A CONFIG=(
+    # Server
+    ['server:timezone']='UTC'
+    ['server:ssh_key']='/vagrant/vagrant/ssh/id_rsa.pub'
+    ['server:known_hosts']='github.com bitbucket.com'
+
+    # Web
+    ['web:webroots']='/vagrant/web/'
+    ['web:ssl']=true
+    ['web:httpd:enabled']=true
+    ['web:httpd:conf']='/vagrant/vagrant/data/web/httpd.conf'
+    ['web:httpd:confssl']='/vagrant/vagrant/data/web/httpd-ssl.conf'
+    ['web:nginx:enabled']=false
+    ['web:nginx:conf']='/vagrant/vagrant/data/web/nginx.conf'
+    ['web:nginx:confssl']='/vagrant/vagrant/data/web/nginx-ssl.conf'
+
+    # PHP
+    ['php:enabled']=true
+    ['php:version']='5.6'
+    ['php:modules']='common mysql intl mcrypt sqlite3 redis gd mbstring xml tidy devel posix opcache pecl-xdebug'
+    ['php:phpunit']=true
+    ['php:composer:enabled']=true
+    ['php:composer:github_token']=''
+    # See https://github.com/settings/tokens/new?scopes=repo to generate Github token
+    ['php:blackfire:enabled']=true
+    ['php:blackfire:server_id']=''
+    ['php:blackfire:server_token']=''
+    ['php:hhvm:enabled']=true
+    ['php:hhvm:composer']=true
+
+    # SQL
+    ['database:sql:enabled']=true
+    ['database:sql:mode']='percona'
+    ['database:sql:fixtures']='/vagrant/vagrant/data/database/fixtures.sql'
+    
+    # Redis
+    ['database:redis:enabled']=true
+
+    # MongoDB
+    ['database:mongodb:enabled']=true
+    ['database:mongodb:fixtures']='/vagrant/vagrant/data/database/fixtures.js'
+
+    # PhpMyAdmin
+    ['phpmyadmin:enabled']=true
+    ['phpmyadmin:version']='4.4.11'
+
+    # NodeJS
+    ['nodejs:enabled']=true
+    ['nodejs:libraries']='bower less gulp'
+
+    # RubyGem
+    ['ruby:enabled']=true
+    ['ruby:gems']='capifony'
+
+    # Python
+    ['python:enabled']=true
+    ['python:version']='3'
+    ['python:pip']=''
+
+    # ZeroMQ
+    ['zeromq:enabled']=true
+
+    # Symfony
+    ['symfony:installer']=true
+    ['symfony:completion']=true
+    ['symfony:twig']=true
+    
+    # Search engine
+    ['search:enabled']=true
+    ['search:mode']='elasticsearch'
+)
