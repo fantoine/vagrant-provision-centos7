@@ -12,7 +12,7 @@ sslconf='/etc/nginx/conf.d/vagrant.ssl.conf'
 if ! yum list installed nginx18 >/dev/null 2>&1; then
     echo 'Installing Nginx'
     yum install -y nginx18 --enablerepo=webtatic >/dev/null 2>&1
-    chkconfig nginx on >/dev/null 2>&1
+    systemctl enable nginx >/dev/null 2>&1
 fi
 
 function nginx_conf {

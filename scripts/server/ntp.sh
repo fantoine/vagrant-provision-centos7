@@ -6,8 +6,8 @@ if [ ! -f /etc/ntp.conf ]; then
     echo 'Installing and configuring NTP'
     yum install -y ntp >/dev/null 2>&1
     ntpdate pool.ntp.org >/dev/null 2>&1
-    chkconfig ntpd on >/dev/null 2>&1
     systemclt start ntpd >/dev/null 2>&1
+    systemctl enable ntpd >/dev/null 2>&1
 
     # Set timezone
     rm -f /etc/localtime

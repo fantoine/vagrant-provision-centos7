@@ -13,7 +13,7 @@ sslconf='/etc/httpd/conf.d/vagrant.ssl.conf'
 if ! yum list installed httpd >/dev/null 2>&1; then
     echo 'Installing Apache'
     yum install -y httpd mod_ssl >/dev/null 2>&1
-    chkconfig httpd on >/dev/null 2>&1
+    systemctl enable httpd >/dev/null 2>&1
 
     # Add upstart script
     cp /vagrant/vagrant/data/web/init-httpd.conf /etc/init/

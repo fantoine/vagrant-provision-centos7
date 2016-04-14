@@ -15,7 +15,7 @@ gpgcheck=0
 enabled=1
 CONTENT
     yum install -y mongodb-org >/dev/null 2>&1
-    chkconfig mongod on >/dev/null 2>&1
+    systemctl enable mongod >/dev/null 2>&1
 
     # Restart MongoDB
     systemclt restart mongod >/dev/null 2>&1

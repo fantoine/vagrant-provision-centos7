@@ -18,7 +18,7 @@ sed -i -e "s@:timezone:@$mysqlTimezone@" /etc/my.cnf
 
 # Restart server
 systemclt start mysql >/dev/null 2>&1
-chkconfig mysql on >/dev/null 2>&1
+systemctl enable mysql >/dev/null 2>&1
 
 # Delete test database
 mysql -u root <<< 'DROP DATABASE IF EXISTS `test`';
